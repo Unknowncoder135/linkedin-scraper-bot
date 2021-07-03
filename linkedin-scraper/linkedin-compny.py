@@ -16,8 +16,8 @@ time.sleep(2)
 
 username = driver.find_element_by_name('session_key')
 password = driver.find_element_by_name('session_password')
-username.send_keys('nixiseve@microcreditoabruzzo.it')
-password.send_keys('asd1234')
+username.send_keys('your usename')
+password.send_keys('your password')
 
 time.sleep(3)
 submit = driver.find_element_by_xpath("//button[@type='submit']").click()
@@ -28,7 +28,7 @@ lists  = []
 
 #  data fatch...
 for x in range(0,50,25):
-    driver.get('https://www.linkedin.com/jobs/search/?keywords=developer&start='+str(x))
+    driver.get('https://www.linkedin.com/jobs/search/?keywords=your url  &start='+str(x))
     time.sleep(2)
 
     main_item  = driver.find_elements_by_xpath("//div[starts-with(@class,'job-card-container')]")
