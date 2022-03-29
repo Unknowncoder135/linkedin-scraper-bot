@@ -6,8 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import time
 
-PATH ="C:\Program Files (x86)\chromedriver.exe"
-driver = webdriver.Chrome(PATH)
+# PATH ="C:\Program Files (x86)\chromedriver.exe"
+driver = webdriver.Chrome()
 driver.get('https://www.linkedin.com')
 time.sleep(2)
 
@@ -34,15 +34,15 @@ for n in range(1, n_pages + 1):
     message_buttons = [btn for btn in all_buttons if btn.text == "Message"]
 
     for i in range(6, 7):
-        #click on "Message" button
+        #clicking on "Message" button
         driver.execute_script("arguments[0].click();", message_buttons[i])
         time.sleep(2)
 
-        #activate main div
+       
         main_div = driver.find_element_by_xpath("//div[starts-with(@class, 'msg-form__msg-content-container')]")
         driver.execute_script("arguments[0].click();", main_div)
 
-        #type message
+       
         paragraphs = driver.find_elements_by_tag_name("p")
         
         all_span = driver.find_elements_by_tag_name("span")
